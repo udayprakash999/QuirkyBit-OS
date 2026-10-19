@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quirkybit OS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/fav.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/b214036e26.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="nav">
+        <div class="time" id="phone-time"></div>
+        <div class="dot"></div>
+        <div class="battery-container">
+           <img src="assets/battery.png" width="20px">
+        <div class="battery">
+        </div>
+
+        </div>
+       
+      </div>
+
+      <div class="screen">
+        <video src="assets/wallpaper-vid.mp4" autoplay loop muted playsinline class="bg-screen"></video>
+        <div class="app photos">
+          <a href="" onclick="event.preventDefault()"
+            ><i class="fa-duotone fa-solid fa-image"></i
+          ></a>
+          <p>Photos</p>
+        </div>
+        <div class="popup" id="popup">
+          <div class="popup-top">
+            <h2>Photos</h2>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: rgb(255, 0, 0)"
+            ></i>
+          </div>
+          <div class="popup-screen">
+            <div class="upload-photo-container">
+              <input type="file" id="uploadphoto" accept="image/*" multiple />
+              <button id="uploadphotoBtn">Upload</button>
+            </div>
+            <div class="photo-list" id="photoList"></div>
+          </div>
+          <div class="popup-bottom"></div>
+        </div>
+
+        <div class="app notes">
+          <a href="" onclick="event.preventDefault()"
+            ><i class="fa-solid fa-note-sticky notes-i"></i
+          ></a>
+          <p>Notes</p>
+        </div>
+        <div class="popup">
+          <div class="popup-top">
+            <h2>Notes</h2>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: rgb(255, 0, 0)"
+            ></i>
+          </div>
+          <div class="popup-screen">
+            <div id="notes-container">
+              <button id="addnotes">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+            </div>
+          </div>
+          <div class="popup-bottom"></div>
+        </div>
+
+        <div class="app calculator">
+          <a href="" onclick="event.preventDefault()"
+            ><i class="fa-solid fa-calculator"></i
+          ></a>
+          <p>Calculator</p>
+        </div>
+        <div class="popup">
+          <div class="popup-top">
+            <h2>Calculator</h2>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: rgb(255, 0, 0)"
+            ></i>
+          </div>
+          <div class="popup-screen calculator-screen">
+            <input name="" id="output" />
+            <div class="numpad">
+              <div>
+                <div class="numvalue" data-value="backspace">
+                  <i class="fa-solid fa-delete-left"></i>
+                </div>
+                <div class="numvalue" data-value="clear">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+                <div class="numvalue" data-value="%">
+                  <i class="fa-solid fa-percent"></i>
+                </div>
+                <div class="numvalue" data-value="/">
+                  <i class="fa-solid fa-divide"></i>
+                </div>
+              </div>
+              <div>
+                <div class="numvalue" data-value="7">
+                  <i class="fa-solid fa-7"></i>
+                </div>
+                <div class="numvalue" data-value="8">
+                  <i class="fa-solid fa-8"></i>
+                </div>
+                <div class="numvalue" data-value="9">
+                  <i class="fa-solid fa-9"></i>
+                </div>
+                <div class="numvalue" data-value="*">
+                  <i class="fa-solid fa-xmark"></i>
+                </div>
+              </div>
+              <div>
+                <div class="numvalue" data-value="4">
+                  <i class="fa-solid fa-4"></i>
+                </div>
+                <div class="numvalue" data-value="5">
+                  <i class="fa-solid fa-5"></i>
+                </div>
+                <div class="numvalue" data-value="6">
+                  <i class="fa-solid fa-6"></i>
+                </div>
+                <div class="numvalue" data-value="-">
+                  <i class="fa-solid fa-minus"></i>
+                </div>
+              </div>
+              <div>
+                <div class="numvalue" data-value="1">
+                  <i class="fa-solid fa-1"></i>
+                </div>
+                <div class="numvalue" data-value="2">
+                  <i class="fa-solid fa-2"></i>
+                </div>
+                <div class="numvalue" data-value="3">
+                  <i class="fa-solid fa-3"></i>
+                </div>
+                <div class="numvalue" data-value="+">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div>
+                <div class="numvalue" data-value="00">00</div>
+                <div class="numvalue" data-value="0">
+                  <i class="fa-solid fa-0"></i>
+                </div>
+                <div class="numvalue" data-value=".">.</div>
+                <div class="numvalue" data-value="=">
+                  <i class="fa-solid fa-equals"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup-bottom"></div>
+        </div>
+
+        <div class="app quickdoc">
+          <a href="" onclick="event.preventDefault()"
+            ><i class="fa-solid fa-file-lines"></i
+          ></a>
+          <p>Quick doc</p>
+        </div>
+        <div class="popup">
+          <div class="popup-top">
+            <h2>Quick Doc</h2>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: rgb(255, 0, 0)"
+            ></i>
+          </div>
+          <div class="popup-screen">
+            <div id="docs-container">
+              <div class="docUserinput">
+                <textarea
+                  name=""
+                  id="docs"
+                  placeholder="type your document here..."
+                ></textarea>
+                <button id="savedocBtn">Save Document</button>
+              </div>
+              <div class="doc-save-all" id="docSaved"></div>
+            </div>
+          </div>
+          <div class="popup-bottom"></div>
+        </div>
+
+        <!-- <div class="app folder">
+          <a href="" onclick="event.preventDefault()"
+            ><i class="fa-solid fa-folder"></i
+          ></a>
+          <p>Folder</p>
+        </div>
+        <div class="popup">
+          <div class="popup-top">
+            <h2>Folder</h2>
+            <i
+              class="fa-regular fa-circle-xmark"
+              style="color: rgb(255, 0, 0)"
+            ></i>
+          </div>
+          <div class="popup-screen"></div>
+          <div class="popup-bottom"></div>
+        </div>       -->
+      </div>
+
+      <footer>
+        <!-- <div class="footer-box contact app">
+          <a href=""
+            ><i class="fa-solid fa-address-book" style="color: #399551"></i
+          ></a>
+          <p>Contacts</p>
+        </div> -->
+        <p class="footer-p">QuirkyBit OS</p>
+        <div class="footer-box square"></div>
+        <div class="footer-box profile"></div>
+      </footer>
+    </div>
+    <script src="calc.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

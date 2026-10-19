@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* font-family: "Inter", sans-serif; */
+/* font-family: "Asul", serif; */
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Asul", serif;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+.phone {
+  width: 32%;
+  height: 90%;
+
+  border-radius: 2rem;
+  border: 3.5px solid #7f7f7f;
+  outline: none;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.nav,
+.popup .popup-top {
+  width: 100%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  padding: 1rem;
+  border-bottom: 1px solid azure;
+}
+.phone .nav {
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phone .nav .time {
+  width: auto;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d9d9d9;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+.phone .nav .dot {
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: auto;
+}
+.battery-container {
+  background: none;
+  display: flex;
+  gap: 3px;
+}
+.phone .nav .battery {
+  background: none;
+  color: green;
+  font-weight: bold;
+  /* width: 100px;
+  height: 30px; */
+}
+
+.screen {
+  /* background: url(assets/wallpaper2.jpg) no-repeat center;
+  background-size: cover; */
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 70px;
+  gap: 1rem;
+  padding: 1rem;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.screen .bg-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+.screen .app {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+}
+.app a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app a i {
+  font-size: 2.5rem;
+}
+.app a .fa-image {
+  background: linear-gradient(to right, #69a9dc, #9d85bd, #f46c4d);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.app a .notes-i {
+  color: #e4fa40;
+}
+.app a .fa-calculator {
+  color: #e5e5e5;
+}
+.app a .fa-file-lines {
+  color: #027ff0;
+}
+.app a .fa-folder {
+  color: #f6be08;
+}
+.app p {
+  margin-top: auto;
+  text-transform: capitalize;
+  text-align: center;
+  color: azure;
+  font-size: 13px;
+  padding-top: 6px;
+}
+/*popup*/
+.screen .popup {
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  height: 90%;
+  border-radius: 1rem;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  box-shadow:
+    rgba(222, 223, 225, 0.25) 0px 1px 1px,
+    rgba(239, 241, 245, 0.13) 0px 0px 1px 1px;
+
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+.screen .popup.active {
+  display: flex;
+}
+.popup .popup-top {
+  background: url(assets/popup-nav-bg.jpg) repeat bottom;
+  background-size: contain;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup .popup-top h2 {
+  color: #fcfcfc;
+  font-size: clamp(1rem, 2.1vw, 0);
+  font-weight: bold;
+}
+.popup-top i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.popup .popup-screen {
+  width: 100%;
+  flex: 1;
+  background-color: #121212cd;
+}
+.popup .popup-bottom {
+  margin-top: auto;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  padding: 1rem;
+  border-top: 1px solid rgba(240, 255, 255, 0.79);
+}
+/* photo app style  */
+
+.upload-photo-container {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.upload-photo-container #uploadphoto {
+  width: 100%;
+  color: azure;
+  background-color: black;
+  outline: none;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 11px;
+  border: none;
+  cursor: cell;
+}
+.upload-photo-container button {
+  background-color: #008cba;
+  outline: none;
+  border-radius: 5px;
+  padding: 2px 11px;
+  color: azure;
+  font-weight: bold;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+.upload-photo-container button:hover,
+#notes-container button:hover {
+  background-color: #017faa;
+  color: rgba(240, 255, 255, 0.775);
+}
+#photoList {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 1rem;
+  align-content: flex-start;
+}
+.photo-container-t {
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #236fb2;
+}
+.photo-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* notes style */
+
+#notes-container {
+  background-color: transparent;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+
+  width: 100%;
+  height: 360px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#notes-container button {
+  width: 10%;
+  background-color: #027ff0;
+  border: none;
+  padding: 5px;
+  color: azure;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+#notes-container .note {
+  padding: 10px;
+  position: relative;
+}
+#notes-container .note textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 1rem;
+  background: rgb(245, 245, 117);
+  padding: 1rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  border: none;
+  outline: none;
+}
+.note span i {
+  position: absolute;
+  top: 70%;
+  left: 95%;
+  color: red;
+}
+.note span i:hover {
+  color: darkred;
+}
+
+/* doc style  */
+.docUserinput {
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.docUserinput textarea {
+  padding: 2px;
+  outline: none;
+  border: none;
+  border: 2px solid #027ff0;
+}
+.docUserinput button {
+  border-radius: 9px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  background-color: #027ff0;
+  color: azure;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+.docUserinput button:hover {
+  background-color: #0281f0e5;
+  color: rgba(240, 255, 255, 0.989);
+}
+.doc-save-all {
+  background-color: transparent;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.doc-save-all p {
+  background-color: #1e1e1e4d;
+  padding: 5px;
+  border-left: 1px solid #027ff0;
+  color: azure;
+  font-size: 14px;
+}
+
+/* calc app style  */
+.popup .calculator-screen {
+  background: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.popup .calculator-screen #output {
+  width: 100%;
+  height: 15%;
+  background-color: #bfbdc4;
+  border: 2px solid rgb(17, 17, 17);
+  outline: none;
+  padding: 0.5rem 1rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  font-size: 1.3rem;
+  text-align: end;
+}
+.calculator-screen .numpad {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calculator-screen .numpad div {
+  display: flex;
+  background: #000;
+}
+.calculator-screen .numpad div > div {
+  cursor: pointer;
+  flex: 1;
+  background-color: #fdfdfda5;
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: auto;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  padding: 1rem;
+  border-top: 1px solid azure;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121212;
+}
+.footer-p {
+  color: aliceblue;
+  font-weight: 100;
+  font-size: 1rem;
+  color: #9671db;
+}
+footer .contact {
+  width: 60px;
+  height: 50px;
+}
+footer .square {
+  background-color: #000000;
+  width: 90px;
+  height: 30px;
+  border-radius: 1rem;
+}
+footer .profile {
+  background: url(assets/profile.jpg) no-repeat center;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+@media (max-width: 950px) {
+  .phone {
+    width: 50%;
+    height: 90%;    
+  }
+}
+@media (max-width: 700px) {
+  .phone {
+    width: 50%;
+    height: 90%;    
+  }
+}
+@media (max-width: 600px) {
+  .phone {
+    width: 80%;
+    height: 90%;    
+  }
+}
